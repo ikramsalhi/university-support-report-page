@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CampusCare - a modern university student support portal." />
+  <title>CampusCare | University Support Portal</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="topbar">
+    <div class="container nav-wrap">
+      <a class="brand" href="#home" aria-label="CampusCare home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg viewBox="0 0 48 48" role="img">
+            <path d="M24 6 5 16l19 10 15-7.9V31h4V16L24 6Z"/>
+            <path d="M12 22v9c0 4.7 5.4 8.5 12 8.5S36 35.7 36 31v-9l-12 6.3L12 22Z"/>
+          </svg>
+        </span>
+        <span>
+          <strong>CampusCare</strong>
+          <small>Student Support</small>
+        </span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="#services">Services</a>
+        <a href="#faq">FAQ</a>
+        <a href="#ticket">Submit a request</a>
+        <a href="#contacts">Contacts</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="icon-btn" id="themeToggle" type="button" aria-label="Toggle dark mode" title="Toggle theme">
+          <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4V2m0 20v-2M4 12H2m20 0h-2M5.64 5.64 4.22 4.22m15.56 15.56-1.42-1.42M18.36 5.64l1.42-1.42M4.22 19.78l1.42-1.42M12 17a5 5 0 1 0 0-10 5 5 0 0 0 0 10Z"/></svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.6 15.6A9 9 0 0 1 8.4 3.4 9 9 0 1 0 20.6 15.6Z"/></svg>
+        </button>
+        <button class="menu-btn" id="menuButton" type="button" aria-label="Open navigation" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+      <a href="#services">Services</a>
+      <a href="#faq">FAQ</a>
+      <a href="#ticket">Submit a request</a>
+      <a href="#contacts">Contacts</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="home">
+      <div class="hero-orb hero-orb-one"></div>
+      <div class="hero-orb hero-orb-two"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow"><span></span> University Student Support Center</div>
+          <h1>Support for every step of your <em>campus journey.</em></h1>
+          <p>
+            Find answers, reach the right department, and submit support requests
+            from one clear and student-friendly portal.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#ticket">
+              Submit a request
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+            </a>
+            <a class="btn btn-secondary" href="#faq">Browse FAQ</a>
+          </div>
+          <div class="hero-trust">
+            <div><strong>6</strong><span>support areas</span></div>
+            <i></i>
+            <div><strong>24/7</strong><span>self-service FAQ</span></div>
+            <i></i>
+            <div><strong>Fast</strong><span>request tracking</span></div>
+          </div>
+        </div>
+
+        <div class="hero-panel">
+          <div class="panel-header">
+            <div>
+              <small>Student support dashboard</small>
+              <h2>How can we help today?</h2>
+            </div>
+            <span class="online-pill"><i></i> Services online</span>
+          </div>
+
+          <div class="quick-search">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            <input id="heroSearch" type="search" placeholder="Search: password, enrollment, scholarship..." aria-label="Search support topics" />
+          </div>
+
+          <div class="quick-links" id="heroQuickLinks">
+            <a href="#faq" data-search="password account login wifi software email">
+              <span class="quick-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></svg>
+              </span>
+              <div><strong>IT & Digital</strong><small>Accounts, Wi-Fi, platforms</small></div>
+              <b>›</b>
+            </a>
+            <a href="#faq" data-search="registration enrollment certificate transcript schedule">
+              <span class="quick-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18H6zM9 7h6M9 11h6M9 15h4"/></svg>
+              </span>
+              <div><strong>Registration</strong><small>Enrollment & documents</small></div>
+              <b>›</b>
+            </a>
+            <a href="#faq" data-search="course professor grade exam academic tutoring">
+              <span class="quick-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 8 9-5 9 5-9 5-9-5Zm4 3v5c3 3 7 3 10 0v-5"/></svg>
+              </span>
+              <div><strong>Academic Support</strong><small>Courses, exams, guidance</small></div>
+              <b>›</b>
+            </a>
+            <a href="#ticket" data-search="support ticket request problem complaint help">
+              <span class="quick-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v12H8l-4 4V5Z"/><path d="M8 9h8M8 13h5"/></svg>
+              </span>
+              <div><strong>Other request</strong><small>Tell us what you need</small></div>
+              <b>›</b>
+            </a>
+          </div>
+          <div class="no-results" id="heroNoResults">No quick match — try the FAQ or submit a request.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light" id="services">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">Support services</span>
+            <h2>Get help from the right team</h2>
+          </div>
+          <p>Choose a support area to see common topics and route your request correctly.</p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card">
+            <span class="service-icon blue">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v12H4zM8 21h8m-4-4v4"/><path d="m9 11 2 2 4-4"/></svg>
+            </span>
+            <h3>IT & Digital Services</h3>
+            <p>Student accounts, Wi-Fi, university email, LMS access and campus software.</p>
+            <a href="#ticket" data-category="IT & Digital">Get IT support <span>→</span></a>
+          </article>
+
+          <article class="service-card">
+            <span class="service-icon violet">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h14v18H5zM8 7h8M8 11h8M8 15h5"/></svg>
+            </span>
+            <h3>Registration & Records</h3>
+            <p>Enrollment, student certificates, transcripts, administrative records and updates.</p>
+            <a href="#ticket" data-category="Registration & Records">Registration help <span>→</span></a>
+          </article>
+
+          <article class="service-card">
+            <span class="service-icon rose">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 8 9-5 9 5-9 5-9-5Zm4 3v5c3 3 7 3 10 0v-5"/></svg>
+            </span>
+            <h3>Academic Support</h3>
+            <p>Study guidance, course concerns, exams, tutoring and academic orientation.</p>
+            <a href="#ticket" data-category="Academic Support">Academic help <span>→</span></a>
+          </article>
+
+          <article class="service-card">
+            <span class="service-icon gold">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M8 12h8M12 7v10"/></svg>
+            </span>
+            <h3>Finance & Scholarships</h3>
+            <p>Fees, payment questions, scholarships, grants and financial documents.</p>
+            <a href="#ticket" data-category="Finance & Scholarships">Finance support <span>→</span></a>
+          </article>
+
+          <article class="service-card">
+            <span class="service-icon green">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11 12 4l9 7v9H3zM8 20v-6h8v6"/></svg>
+            </span>
+            <h3>Campus Life</h3>
+            <p>Clubs, events, transport, housing, facilities and student services on campus.</p>
+            <a href="#ticket" data-category="Campus Life">Campus support <span>→</span></a>
+          </article>
+
+          <article class="service-card">
+            <span class="service-icon cyan">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 1 1-16 0c0-4 3-7 8-7s8 3 8 7Z"/><path d="M9 11h6M12 8v6M7 20l-2 2M17 20l2 2"/></svg>
+            </span>
+            <h3>Wellbeing & Accessibility</h3>
+            <p>Accessibility, health resources, counseling information and wellbeing support.</p>
+            <a href="#ticket" data-category="Wellbeing & Accessibility">Wellbeing support <span>→</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="status">
+      <div class="container status-banner">
+        <div class="status-copy">
+          <span class="status-dot"></span>
+          <div>
+            <small>System status</small>
+            <h3>All student services are operating normally.</h3>
+          </div>
+        </div>
+        <div class="status-items">
+          <span><i class="ok"></i> Student Portal</span>
+          <span><i class="ok"></i> University Email</span>
+          <span><i class="ok"></i> LMS</span>
+          <span><i class="ok"></i> Wi-Fi</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light" id="faq">
+      <div class="container faq-layout">
+        <div class="faq-intro">
+          <span class="section-kicker">Frequently asked questions</span>
+          <h2>Answers before you need to wait</h2>
+          <p>Search common student questions or browse by topic. If you still need help, send us a request.</p>
+
+          <label class="faq-search">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+            <input id="faqSearch" type="search" placeholder="Search the FAQ..." />
+          </label>
+
+          <div class="faq-tags" id="faqTags">
+            <button class="active" data-filter="all">All</button>
+            <button data-filter="it">IT</button>
+            <button data-filter="registration">Registration</button>
+            <button data-filter="academic">Academic</button>
+            <button data-filter="finance">Finance</button>
+          </div>
+        </div>
+
+        <div class="accordion" id="faqAccordion">
+          <article class="faq-item" data-category="it" data-keywords="password account login reset credentials">
+            <button class="faq-question" aria-expanded="false">
+              <span>How do I reset my student account password?</span>
+              <i>+</i>
+            </button>
+            <div class="faq-answer">
+              <p>Use the university password reset portal with your student ID and recovery method. If you cannot access the recovery option, submit an IT & Digital request and include your student ID.</p>
+            </div>
+          </article>
+
+          <article class="faq-item" data-category="it" data-keywords="wifi internet eduroam network campus">
+            <button class="faq-question" aria-expanded="false">
+              <span>I cannot connect to campus Wi-Fi. What should I check?</span>
+              <i>+</i>
+            </button>
+            <div class="faq-answer">
+              <p>Confirm your student account is active, forget and reconnect to the campus network, and verify the correct username format. If the problem continues, include your device type and building in the support request.</p>
+            </div>
+          </article>
+
+          <article class="faq-item" data-category="registration" data-keywords="certificate enrollment registration proof student document">
+            <button class="faq-question" aria-expanded="false">
+              <span>Where can I request an enrollment certificate?</span>
+              <i>+</i>
+            </button>
+            <div class="faq-answer">
+              <p>Enrollment certificates are normally available through the student administrative portal or the registration office. Choose “Registration & Records” when submitting a request if your document is missing.</p>
+            </div>
+          </article>
+
+          <article class="faq-item" data-category="registration" data-keywords="personal data name address profile record update correction">
+            <button class="faq-question" aria-expanded="false">
+              <span>How can I correct information in my student record?</span>
+              <i>+</i>
+            </button>
+            <div class="faq-answer">
+              <p>Submit a Registration & Records request describing the incorrect field. For official identity changes, the university may ask for supporting documentation.</p>
+            </div>
+          </article>
+
+          <article class="faq-item" data-category="academic" data-keywords="grade exam result course professor appeal">
+            <button class="faq-question" aria-expanded="false">
+              <span>Who should I contact about a grade or exam issue?</span>
+              <i>+</i>
+            </button>
+            <div class="faq-answer">
+              <p>Start with the course instructor or department procedure. If administrative help is required, select Academic Support and include the course name, group, and a concise explanation.</p>
+            </div>
+          </article>
+
+          <article class="faq-item" data-category="academic" data-keywords="schedule timetable course class room">
+            <button class="faq-question" aria-expanded="false">
+              <span>My course or timetable is missing. What should I do?</span>
+              <i>+</i>
+            </button>
+            <div class="faq-answer">
+              <p>Check your enrollment status first. If registration is confirmed but the course is still missing, send an Academic Support request with the module name and your study program.</p>
+            </div>
+          </article>
+
+          <article class="faq-item" data-category="finance" data-keywords="scholarship grant funding application payment">
+            <button class="faq-question" aria-expanded="false">
+              <span>How can I ask about scholarship status?</span>
+              <i>+</i>
+            </button>
+            <div class="faq-answer">
+              <p>Select Finance & Scholarships and include the scholarship name and application reference if available. Do not include bank passwords or other confidential credentials.</p>
+            </div>
+          </article>
+
+          <article class="faq-item" data-category="finance" data-keywords="fee payment receipt invoice finance">
+            <button class="faq-question" aria-expanded="false">
+              <span>I need a payment receipt or fee clarification.</span>
+              <i>+</i>
+            </button>
+            <div class="faq-answer">
+              <p>Use the Finance & Scholarships category. Include the relevant academic year and payment reference, but never submit card numbers, PINs, or banking passwords.</p>
+            </div>
+          </article>
+
+          <div class="faq-empty" id="faqEmpty">
+            <strong>No matching FAQ found.</strong>
+            <span>Try another keyword or submit a support request below.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section request-section" id="ticket">
+      <div class="container request-grid">
+        <div class="request-copy">
+          <span class="section-kicker light">Support request</span>
+          <h2>Still need help?<br />Send us a request.</h2>
+          <p>
+            Provide the essential details and the request will be saved in your browser
+            with a tracking reference for this demo.
+          </p>
+
+          <div class="steps">
+            <div><span>1</span><p><strong>Describe the issue</strong><small>Choose the right category and explain what happened.</small></p></div>
+            <div><span>2</span><p><strong>Receive a reference</strong><small>Your request gets a unique support ID.</small></p></div>
+            <div><span>3</span><p><strong>Track locally</strong><small>View your recent demo requests on this device.</small></p></div>
+          </div>
+
+          <div class="privacy-note">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="10" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+            <p><strong>Privacy reminder</strong><br />Never submit passwords, PINs, private keys or payment card details.</p>
+          </div>
+        </div>
+
+        <div class="form-card">
+          <form id="supportForm">
+            <div class="form-heading">
+              <div>
+                <small>New support request</small>
+                <h3>Tell us what you need</h3>
+              </div>
+              <span>Typical response: 1–2 business days</span>
+            </div>
+
+            <div class="form-row">
+              <label>
+                Full name
+                <input id="fullName" name="fullName" type="text" placeholder="Your full name" autocomplete="name" required />
+              </label>
+              <label>
+                Student ID
+                <input id="studentId" name="studentId" type="text" placeholder="e.g. 2026-12345" required />
+              </label>
+            </div>
+
+            <label>
+              University email
+              <input id="email" name="email" type="email" placeholder="name@university.edu" autocomplete="email" required />
+            </label>
+
+            <div class="form-row">
+              <label>
+                Support category
+                <select id="category" name="category" required>
+                  <option value="">Select a category</option>
+                  <option>IT & Digital</option>
+                  <option>Registration & Records</option>
+                  <option>Academic Support</option>
+                  <option>Finance & Scholarships</option>
+                  <option>Campus Life</option>
+                  <option>Wellbeing & Accessibility</option>
+                  <option>Other</option>
+                </select>
+              </label>
+              <label>
+                Priority
+                <select id="priority" name="priority" required>
+                  <option value="Normal">Normal</option>
+                  <option value="Low">Low</option>
+                  <option value="High">High</option>
+                </select>
+              </label>
+            </div>
+
+            <label>
+              Subject
+              <input id="subject" name="subject" type="text" placeholder="Short summary of the issue" maxlength="100" required />
+            </label>
+
+            <label>
+              Description
+              <textarea id="description" name="description" rows="5" placeholder="Explain what happened, what you expected, and any steps you already tried..." maxlength="1200" required></textarea>
+              <span class="char-count"><b id="charCount">0</b>/1200</span>
+            </label>
+
+            <label class="checkbox">
+              <input id="consent" type="checkbox" required />
+              <span>I confirm that this request does not contain passwords or highly sensitive information.</span>
+            </label>
+
+            <button class="btn btn-primary submit-btn" type="submit">
+              Submit support request
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 14-7-4 14-3-6-7-1Z"/></svg>
+            </button>
+
+            <p class="demo-note">Demo project: requests are stored only in this browser using localStorage.</p>
+          </form>
+
+          <div class="success-panel" id="successPanel" aria-live="polite">
+            <span class="success-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg>
+            </span>
+            <small>Request submitted</small>
+            <h3>We saved your support request.</h3>
+            <p>Your demo reference is:</p>
+            <strong id="ticketReference">SUP-000000</strong>
+            <div class="success-actions">
+              <button class="btn btn-primary" id="newRequestBtn" type="button">Create another request</button>
+              <button class="btn btn-secondary" id="viewRequestsBtn" type="button">View my requests</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-light" id="myRequests">
+      <div class="container">
+        <div class="section-heading requests-heading">
+          <div>
+            <span class="section-kicker">Local request history</span>
+            <h2>My recent requests</h2>
+          </div>
+          <button class="text-btn danger" id="clearRequestsBtn" type="button">Clear demo history</button>
+        </div>
+        <div id="requestList" class="request-list"></div>
+      </div>
+    </section>
+
+    <section class="section" id="contacts">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="section-kicker">Contact directory</span>
+            <h2>Quick university contacts</h2>
+          </div>
+          <p>Replace these demo contacts with your university’s official details before production use.</p>
+        </div>
+
+        <div class="contact-grid">
+          <article class="contact-card">
+            <span class="contact-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4z"/><path d="m4 7 8 6 8-6"/></svg>
+            </span>
+            <small>General support</small>
+            <h3>Student Help Desk</h3>
+            <a href="mailto:support@university.example">support@university.example</a>
+            <p>Mon–Thu 08:30–16:30<br />Fri 08:30–12:30</p>
+          </article>
+
+          <article class="contact-card">
+            <span class="contact-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h12v20H6zM9 6h6M9 10h6M9 14h4"/></svg>
+            </span>
+            <small>Administrative help</small>
+            <h3>Registration Office</h3>
+            <a href="mailto:registration@university.example">registration@university.example</a>
+            <p>Student documents, enrollment and records.</p>
+          </article>
+
+          <article class="contact-card">
+            <span class="contact-icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v12H4zM8 21h8m-4-4v4"/></svg>
+            </span>
+            <small>Technical help</small>
+            <h3>IT Service Desk</h3>
+            <a href="mailto:ithelp@university.example">ithelp@university.example</a>
+            <p>Accounts, systems, Wi-Fi and digital services.</p>
+          </article>
+        </div>
+
+        <div class="urgent-note">
+          <span>!</span>
+          <div>
+            <strong>Urgent health or safety situation?</strong>
+            <p>This portfolio demo is not an emergency service. In a real deployment, place the university’s official campus security and emergency instructions here.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div>
+        <a class="brand footer-brand" href="#home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 48 48"><path d="M24 6 5 16l19 10 15-7.9V31h4V16L24 6Z"/><path d="M12 22v9c0 4.7 5.4 8.5 12 8.5S36 35.7 36 31v-9l-12 6.3L12 22Z"/></svg>
+          </span>
+          <span><strong>CampusCare</strong><small>Student Support</small></span>
+        </a>
+        <p>A modern student-support front-end project built for a university portfolio.</p>
+      </div>
+      <div>
+        <strong>Support</strong>
+        <a href="#services">Services</a>
+        <a href="#faq">FAQ</a>
+        <a href="#ticket">Submit request</a>
+      </div>
+      <div>
+        <strong>Student resources</strong>
+        <a href="#status">System status</a>
+        <a href="#myRequests">My requests</a>
+        <a href="#contacts">Contacts</a>
+      </div>
+      <div>
+        <strong>Project</strong>
+        <a href="https://github.com/ikramsalhi/supportpage" target="_blank" rel="noreferrer">GitHub repository</a>
+        <span>Portfolio demo</span>
+        <span>Vanilla HTML/CSS/JS</span>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <b id="currentYear"></b> CampusCare demo.</span>
+      <span>Designed for accessibility, clarity and responsive use.</span>
+    </div>
+  </footer>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
