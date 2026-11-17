@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="CampusCare - a modern university student support portal." />
+  <meta name="description" content="CampusCare — a responsive student support demo with searchable FAQs and private, locally saved requests." />
+  <meta name="theme-color" content="#4f46e5" />
   <title>CampusCare | University Support Portal</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="styles.css" />
@@ -76,7 +77,7 @@
             <i></i>
             <div><strong>24/7</strong><span>self-service FAQ</span></div>
             <i></i>
-            <div><strong>Fast</strong><span>request tracking</span></div>
+            <div><strong>Private</strong><span>local request history</span></div>
           </div>
         </div>
 
@@ -86,7 +87,7 @@
               <small>Student support dashboard</small>
               <h2>How can we help today?</h2>
             </div>
-            <span class="online-pill"><i></i> Services online</span>
+            <span class="online-pill"><i></i> Interactive demo</span>
           </div>
 
           <div class="quick-search">
@@ -203,14 +204,14 @@
           <span class="status-dot"></span>
           <div>
             <small>System status</small>
-            <h3>All student services are operating normally.</h3>
+            <h3>Demo display — live service status is not connected.</h3>
           </div>
         </div>
         <div class="status-items">
-          <span><i class="ok"></i> Student Portal</span>
-          <span><i class="ok"></i> University Email</span>
-          <span><i class="ok"></i> LMS</span>
-          <span><i class="ok"></i> Wi-Fi</span>
+          <span><i class="ok"></i> Student Portal (demo)</span>
+          <span><i class="ok"></i> University Email (demo)</span>
+          <span><i class="ok"></i> LMS (demo)</span>
+          <span><i class="ok"></i> Wi-Fi (demo)</span>
         </div>
       </div>
     </section>
@@ -228,11 +229,11 @@
           </label>
 
           <div class="faq-tags" id="faqTags">
-            <button class="active" data-filter="all">All</button>
-            <button data-filter="it">IT</button>
-            <button data-filter="registration">Registration</button>
-            <button data-filter="academic">Academic</button>
-            <button data-filter="finance">Finance</button>
+            <button type="button" class="active" aria-pressed="true" data-filter="all">All</button>
+            <button type="button" aria-pressed="false" data-filter="it">IT</button>
+            <button type="button" aria-pressed="false" data-filter="registration">Registration</button>
+            <button type="button" aria-pressed="false" data-filter="academic">Academic</button>
+            <button type="button" aria-pressed="false" data-filter="finance">Finance</button>
           </div>
         </div>
 
@@ -354,7 +355,7 @@
                 <small>New support request</small>
                 <h3>Tell us what you need</h3>
               </div>
-              <span>Typical response: 1–2 business days</span>
+              <span>Portfolio demo · no real submission</span>
             </div>
 
             <div class="form-row">
@@ -425,13 +426,14 @@
             <span class="success-icon">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg>
             </span>
-            <small>Request submitted</small>
-            <h3>We saved your support request.</h3>
+            <small>Saved on this device</small>
+            <h3>Your demo request is saved.</h3>
             <p>Your demo reference is:</p>
             <strong id="ticketReference">SUP-000000</strong>
             <div class="success-actions">
               <button class="btn btn-primary" id="newRequestBtn" type="button">Create another request</button>
               <button class="btn btn-secondary" id="viewRequestsBtn" type="button">View my requests</button>
+              <button class="btn btn-secondary" id="copyReferenceBtn" type="button">Copy reference</button>
             </div>
           </div>
         </div>
@@ -445,9 +447,31 @@
             <span class="section-kicker">Local request history</span>
             <h2>My recent requests</h2>
           </div>
-          <button class="text-btn danger" id="clearRequestsBtn" type="button">Clear demo history</button>
+          <div class="history-actions">
+            <button class="btn btn-secondary" id="exportRequestsBtn" type="button">Export JSON</button>
+            <button class="text-btn danger" id="clearRequestsBtn" type="button">Clear demo history</button>
+          </div>
         </div>
-        <div id="requestList" class="request-list"></div>
+        <p class="history-note">🔒 Only on this device. These requests are not sent to a university, and there is no staff processing or live tracking. Avoid storing sensitive information on shared devices.</p>
+        <div class="history-stats" aria-label="Local request summary">
+          <div><span>Total requests</span><strong id="totalRequests">0</strong></div>
+          <div><span>High priority</span><strong id="highPriorityCount">0</strong></div>
+          <div><span>Latest saved</span><strong id="latestRequest">—</strong></div>
+        </div>
+        <div class="history-filters">
+          <label>Search requests
+            <input id="requestSearch" type="search" placeholder="Subject, reference or category…" autocomplete="off" />
+          </label>
+          <label>Priority
+            <select id="requestPriority">
+              <option value="">All priorities</option>
+              <option value="High">High</option>
+              <option value="Normal">Normal</option>
+              <option value="Low">Low</option>
+            </select>
+          </label>
+        </div>
+        <div id="requestList" class="request-list" aria-live="polite"></div>
       </div>
     </section>
 
@@ -513,7 +537,7 @@
           </span>
           <span><strong>CampusCare</strong><small>Student Support</small></span>
         </a>
-        <p>A modern student-support front-end project built for a university portfolio.</p>
+        <p>A student-support interface demo. No real university services or staff are connected.</p>
       </div>
       <div>
         <strong>Support</strong>
@@ -529,7 +553,7 @@
       </div>
       <div>
         <strong>Project</strong>
-        <a href="https://github.com/ikramsalhi/supportpage" target="_blank" rel="noreferrer">GitHub repository</a>
+        <a href="https://github.com/ikramsalhi/university-support-report-page" target="_blank" rel="noreferrer">GitHub repository</a>
         <span>Portfolio demo</span>
         <span>Vanilla HTML/CSS/JS</span>
       </div>

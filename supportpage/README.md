@@ -1,123 +1,47 @@
 # CampusCare — University Student Support Portal
 
-CampusCare is a polished, responsive front-end support portal designed for a university environment. It gives students one place to find common answers, discover the right support department, submit a support request, and view recent demo requests.
+Responsive, accessible **student support demonstration** built with HTML, CSS and vanilla JavaScript.
 
-> Portfolio project by **Ikram Salhi**  
-> GitHub repository: `ikramsalhi/supportpage`
+**Live backend: none.** Requests are saved in the current browser's localStorage. The sample contacts and system-status labels are not real university services.
 
-## ✨ Features
+## Features
+- Six support areas, searchable help topics and FAQ filters
+- Keyboard-accessible FAQ controls, mobile navigation and light/dark mode
+- Locally saved support requests with reference numbers
+- Request dashboard: totals, high-priority count, latest saved date
+- Search by subject, category, reference or description, plus priority filter
+- Expand details, delete individual records or clear the entire history
+- Export locally saved requests to a downloadable JSON file
+- Copy the new request reference (where browser clipboard permission allows)
+- Error handling for unavailable browser storage and safe HTML escaping
+- Responsive layout and reduced-motion support
 
-- Responsive university support landing page
-- Six support service categories
-- Searchable and filterable FAQ
-- Expandable FAQ accordion
-- Student support request form
-- Unique support reference generation
-- Local request history with `localStorage`
-- Priority and request-status badges
-- Service-status banner
-- University contact directory
-- Light and dark mode
-- Mobile navigation
-- Accessibility improvements:
-  - semantic sections
-  - skip link
-  - keyboard-friendly controls
-  - `aria-expanded` FAQ state
-  - readable focus states
-- No framework or build step required
+## Run locally
+Open `supportpage/index.html` in a browser, or serve the repository with a simple static server.
 
-## 🧩 Support areas
+## GitHub Pages
+The root `index.html` redirects visitors to `supportpage/index.html`. In GitHub **Settings → Pages**, choose **Deploy from a branch**, `main`, and `/ (root)`.
 
-- IT & Digital Services
-- Registration & Records
-- Academic Support
-- Finance & Scholarships
-- Campus Life
-- Wellbeing & Accessibility
+## Data privacy and limitations
+This is a front-end portfolio demo, **not a university ticketing system**:
+- There is no authentication, server, staff workflow, email delivery or live tracking.
+- Records containing a name, student ID, email and issue description stay in localStorage on the current browser profile. People using that browser profile may see them.
+- JSON exports contain the same personal information; handle them carefully.
+- Do not enter passwords, payment card data or confidential information.
+- Browser history can be cleared using the provided button; deleting the browser's site data also clears it.
+- For real deployment, use an authenticated backend, server validation, authorization, retention rules and official contact details.
 
-## 🛠️ Built with
-
-- HTML5
-- CSS3
-- Vanilla JavaScript
-- Browser `localStorage`
-- Inline SVG icons
-
-## 📂 Project structure
-
+## Structure
 ```text
+index.html                  Root redirect for GitHub Pages
 supportpage/
-├── assets/
-│   └── favicon.svg
-├── index.html
-├── styles.css
-├── app.js
-├── README.md
-└── .gitignore
+  index.html                User interface
+  styles.css                Responsive styling
+  app.js                    Local demo interactions
+  assets/favicon.svg
+  README.md
 ```
 
-## 🚀 Run locally
+Created as a portfolio project by **Ikram Salhi**.
 
-No installation is required.
-
-Open `index.html` directly in a browser, or use VS Code Live Server.
-
-## 🌐 GitHub Pages
-
-Because the project is fully static, it can be deployed directly with GitHub Pages.
-
-After pushing the project:
-
-1. Open the repository on GitHub.
-2. Go to **Settings → Pages**.
-3. Under **Build and deployment**, choose **Deploy from a branch**.
-4. Select the `main` branch and `/ (root)`.
-5. Save.
-
-GitHub will provide the public project URL after deployment.
-
-## ⚠️ Demo behavior
-
-This project is a **front-end portfolio demo**.
-
-Support form submissions are **not sent to a real university server**. They are stored only in the user's browser with `localStorage`.
-
-Before using this in a real university environment:
-
-- connect the form to an authenticated backend/API
-- validate university accounts server-side
-- use a real support/ticket database
-- add staff roles and ticket assignment
-- add email notifications
-- add rate limiting and server-side validation
-- replace all `.example` contact addresses with official university contacts
-- follow the university's privacy and data-retention policies
-
-## 🔒 Privacy principle
-
-The interface reminds students never to submit:
-
-- passwords
-- PINs
-- banking credentials
-- payment card numbers
-- private keys
-- authentication tokens
-
-## 💡 Possible future upgrades
-
-- FastAPI / Node.js backend
-- PostgreSQL database
-- Student SSO login
-- Staff dashboard
-- Ticket status timeline
-- Attachments
-- Email notifications
-- SLA tracking
-- Multilingual support (English / French / Arabic)
-- Admin analytics dashboard
-
-## 📄 License
-
-This repository is intended as a student portfolio project. Add a license if you decide to publish it for reuse.
+Repository: https://github.com/ikramsalhi/university-support-report-page

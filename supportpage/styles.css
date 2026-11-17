@@ -834,3 +834,43 @@ footer { background: var(--navy); color: #dce3f1; padding: 55px 0 20px; }
   .request-item { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
 }
+
+
+/* Request history dashboard */
+.history-note { margin: -10px 0 22px; color: var(--muted); font-size: 13px; max-width: 800px; }
+.history-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-bottom: 22px; }
+.history-stats > div { background: var(--bg); border: 1px solid var(--border); border-radius: 17px; padding: 18px 20px; display: grid; gap: 4px; }
+.history-stats span { font-size: 12px; color: var(--muted); }
+.history-stats strong { font-size: clamp(19px, 2.5vw, 27px); letter-spacing: -.04em; }
+.history-actions { display: flex; gap: 15px; align-items: center; flex-wrap: wrap; }
+.history-actions .btn { min-height: 38px; padding: 0 14px; }
+.history-filters { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 12px; margin-bottom: 16px; }
+.history-filters label { font-size: 12px; }
+.request-item { grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr) auto auto; }
+.request-item-actions { justify-self: end; }
+.request-detail { grid-column: 1 / -1; border-top: 1px solid var(--border); padding-top: 12px; min-width: 0; }
+.request-detail summary { cursor: pointer; color: var(--primary); font-weight: 700; font-size: 12px; }
+.request-detail dl { margin: 14px 0 0; display: grid; grid-template-columns: minmax(100px, .25fr) minmax(0, 1fr); column-gap: 12px; row-gap: 7px; font-size: 12px; }
+.request-detail dt { color: var(--muted); }
+.request-detail dd { margin: 0; overflow-wrap: anywhere; }
+.request-description { white-space: pre-wrap; }
+:focus-visible { outline: 3px solid var(--primary); outline-offset: 3px; }
+button:disabled { opacity: .5; cursor: not-allowed; }
+section[id] { scroll-margin-top: 88px; }
+@media (max-width: 720px) {
+  .history-stats { grid-template-columns: 1fr 1fr; }
+  .history-stats > div:last-child { grid-column: 1 / -1; }
+  .history-filters { grid-template-columns: 1fr; }
+  .request-item { grid-template-columns: minmax(0, 1fr) auto; }
+  .requests-heading { gap: 17px; }
+}
+@media (max-width: 460px) {
+  .history-stats { grid-template-columns: 1fr; }
+  .history-stats > div:last-child { grid-column: auto; }
+  .request-item { grid-template-columns: 1fr; }
+  .request-item-actions { justify-self: start; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
