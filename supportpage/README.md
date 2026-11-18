@@ -45,3 +45,9 @@ supportpage/
 Created as a portfolio project by **Ikram Salhi**.
 
 Repository: https://github.com/ikramsalhi/university-support-report-page
+
+## 🔐 Secure server API
+
+The optional Node.js backend now provides encrypted SQLite storage, strong private ticket access tokens, server-side validation, request rate limits and security headers. Run the full site with `npm start` at the repository root after setting `DATA_ENCRYPTION_KEY`. See [backend setup and limitations](../BACKEND.md).
+
+**GitHub Pages is static and does not run the backend.** Do not use demo mode for real student information.

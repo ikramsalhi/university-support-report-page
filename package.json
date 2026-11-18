@@ -1,0 +1,13 @@
+{
+  "name": "campuscare-secure-api",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "CampusCare encrypted support ticket backend, no third-party dependencies",
+  "engines": { "node": ">=24" },
+  "scripts": {
+    "start": "node backend/server.mjs",
+    "test": "node --test backend/*.test.mjs",
+    "check": "node --check backend/server.mjs && node --check supportpage/server-client.js && npm test"
+  }
+}

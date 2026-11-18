@@ -1,0 +1,17 @@
+/* Styles for the optional encrypted backend mode; ignored by the static-only demo. */
+.secure-credentials { margin: 12px 0 22px; padding: 16px; background: var(--primary-soft); border: 1px solid var(--border); border-radius: 12px; max-width: 100%; }
+.secure-credentials[hidden] { display: none !important; }
+.secure-credentials p { margin: 0 0 12px; font-size: 13px; font-weight: 700; }
+.private-ticket-key { display: block; overflow-wrap: anywhere; user-select: all; font-size: 13px; }
+.secure-ticket { padding: 20px; background: var(--bg); border: 1px solid var(--border); border-radius: 15px; display: grid; gap: 8px; min-width: 0; }
+.secure-ticket strong { color: var(--text); overflow-wrap: anywhere; }
+.secure-ticket small { color: var(--muted); }
+.secure-ticket-actions { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; margin-top: 7px; }
+.secure-ticket-detail { width: 100%; white-space: pre-wrap; overflow-wrap: anywhere; font: inherit; font-size: 12px; line-height: 1.7; border-top: 1px solid var(--border); padding-top: 14px; margin: 8px 0 0; }
+.secure-ticket-detail[hidden] { display: none !important; }
+.restore-ticket { display: grid; gap: 13px; margin-top: 25px; padding: 25px; background: var(--surface); border: 1px solid var(--border); border-radius: 17px; }
+.restore-ticket h3 { margin: 0; font-size: 18px; }
+.restore-ticket p { margin: 0; color: var(--muted); font-size: 13px; }
+.restore-ticket label { max-width: 620px; }
+.restore-ticket button { justify-self: start; }
+@media (max-width: 460px) { .restore-ticket { padding: 17px; } }
